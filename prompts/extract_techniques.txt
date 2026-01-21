@@ -1,0 +1,54 @@
+You are analyzing a transcript from Brian Shannon's market analysis videos. Your task is to extract all technical analysis techniques, features, and concepts mentioned.
+
+TRANSCRIPT:
+{transcript}
+
+Extract the following information and return as JSON:
+
+1. **features**: List of technical analysis features/concepts mentioned (e.g., "Anchored VWAP", "20 day moving average", "higher highs/higher lows", "support level", "gap analysis")
+
+2. **tickers**: List of stock/ETF tickers mentioned (e.g., "SPY", "AAPL", "TLT")
+
+3. **usage_patterns**: For each feature, describe HOW Shannon uses it (bullish/bearish signal, entry/exit trigger, confirmation, etc.)
+
+4. **key_quotes**: Extract 2-5 direct quotes that best demonstrate Shannon's analysis approach
+
+5. **feature_combinations**: Note any features that are used TOGETHER in the same analysis (e.g., "AVWAP + 20 day MA for entry confirmation")
+
+6. **macro_events**: Any macro events mentioned (CPI, Fed, earnings, elections, etc.)
+
+Return ONLY valid JSON in this exact format:
+```json
+{{
+  "features": [
+    {{
+      "name": "feature name",
+      "category": "Moving Averages|AVWAP|Price Patterns|Support/Resistance|Volume|Timeframe|Risk Management|Market Indicators|Macro",
+      "usage": "description of how it's used in this transcript"
+    }}
+  ],
+  "tickers": [
+    {{
+      "symbol": "TICKER",
+      "context": "brief context of how it was discussed"
+    }}
+  ],
+  "key_quotes": [
+    "exact quote from transcript demonstrating technique"
+  ],
+  "feature_combinations": [
+    {{
+      "features": ["feature1", "feature2"],
+      "usage": "how these features are used together"
+    }}
+  ],
+  "macro_events": [
+    {{
+      "event": "event name",
+      "context": "how it relates to the analysis"
+    }}
+  ]
+}}
+```
+
+Focus on extracting actionable trading techniques and Shannon's specific approach to technical analysis. Include exact terminology he uses.

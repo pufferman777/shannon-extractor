@@ -1,0 +1,52 @@
+# Shannon Transcripts Knowledge Extractor Configuration
+
+# Ollama Model Settings
+model:
+  name: "llama3.1:8b"  # or "mistral", "llama3.1:70b" for better quality
+  context_window: 8192  # tokens
+  temperature: 0.1  # low temperature for consistent extraction
+
+# Path Settings
+paths:
+  transcripts: "~/pCloud/pCloud2026/Shannon Transcripts/"
+  output_dir: "./output"
+  raw_dir: "./output/raw"
+  consolidated_dir: "./output/consolidated"
+  reference_file: "./output/reference.md"
+  prompt_template: "./prompts/extract_techniques.txt"
+
+# Processing Settings
+processing:
+  sample_size: 5  # number of transcripts for sample mode
+  chunk_size: 6000  # characters per chunk (leave room for prompt)
+  chunk_overlap: 500  # overlap between chunks to preserve context
+  batch_size: 10  # transcripts to process before saving checkpoint
+
+# Feature Categories for Extraction
+categories:
+  - "Moving Averages"
+  - "Anchored VWAP"
+  - "Price Patterns"
+  - "Support/Resistance"
+  - "Volume Analysis"
+  - "Timeframe Analysis"
+  - "Risk Management"
+  - "Market Indicators"
+  - "Macro Events"
+
+# Known Features to Track (helps with consistency)
+known_features:
+  - "Anchored VWAP"
+  - "20 day moving average"
+  - "50 day moving average"
+  - "200 day moving average"
+  - "Higher highs / higher lows"
+  - "Lower highs / lower lows"
+  - "Support levels"
+  - "Resistance levels"
+  - "Triangle patterns"
+  - "Gap analysis"
+  - "Multiple timeframe analysis"
+  - "Weekly trend"
+  - "Daily trend"
+  - "Volume confirmation"
