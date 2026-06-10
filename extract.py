@@ -155,13 +155,13 @@ def merge_extractions(extractions: list[dict]) -> dict:
             continue
 
         for feature in ext.get("features", []):
-            key = feature.get("name", "").lower()
+            key = (feature.get("name") or "").lower()
             if key and key not in seen_features:
                 seen_features.add(key)
                 merged["features"].append(feature)
 
         for ticker in ext.get("tickers", []):
-            symbol = ticker.get("symbol", "").upper()
+            symbol = (ticker.get("symbol") or "").upper()
             if symbol and symbol not in seen_tickers:
                 seen_tickers.add(symbol)
                 merged["tickers"].append(ticker)
@@ -231,7 +231,7 @@ def consolidate_extractions(extractions: list[dict]) -> dict:
                     feature_cooccurrence[f1][f2] += 1
 
         for ticker in ext.get("tickers", []):
-            symbol = ticker.get("symbol", "").upper()
+            symbol = (ticker.get("symbol") or "").upper()
             if symbol:
                 ticker_counts[symbol]["count"] += 1
                 if ticker.get("context"):

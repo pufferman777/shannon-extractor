@@ -2,17 +2,17 @@
 
 # Ollama Model Settings
 model:
-  name: "llama3.1:8b"  # or "mistral", "llama3.1:70b" for better quality
+  name: "mistral:7b"  # or "phi4:14b" for better quality, "llama3.1:70b" for best
   context_window: 8192  # tokens
   temperature: 0.1  # low temperature for consistent extraction
 
 # Path Settings
 paths:
-  transcripts: "~/pCloud/pCloud2026/Shannon Transcripts/"
-  output_dir: "./output"
-  raw_dir: "./output/raw"
-  consolidated_dir: "./output/consolidated"
-  reference_file: "./output/reference.md"
+  transcripts: "/mnt/m2store/traders_vids/brian_shannon/Transcripts/"
+  output_dir: "/home/althea/Documents/ProjectOutputs/ShannonOutput"
+  raw_dir: "/home/althea/Documents/ProjectOutputs/ShannonOutput/raw"
+  consolidated_dir: "/home/althea/Documents/ProjectOutputs/ShannonOutput/consolidated"
+  reference_file: "/home/althea/Documents/ProjectOutputs/ShannonOutput/reference.md"
   prompt_template: "./prompts/extract_techniques.txt"
 
 # Processing Settings
